@@ -2,7 +2,7 @@ kind: ImageStream
 apiVersion: image.openshift.io/v1
 metadata:
   name: postgresql96
-  namespace: default
+  namespace: jupyterhub
   selfLink: /apis/image.openshift.io/v1/namespaces/default/imagestreams/postgresql-96
   uid: e6243e92-5cb1-45da-ad76-0b16f5cc4e43
   resourceVersion: '4663079'
