@@ -373,6 +373,10 @@
                                         "value": "${DATABASE_PASSWORD}"
                                     },
                                     {
+                                        "name": "PGDATA",
+                                        "value": "/var/lib/postgresql/data/pgdata"
+                                    },
+                                    {
                                         "name": "POSTGRESQL_DATABASE",
                                         "value": "postgres"
                                     }
