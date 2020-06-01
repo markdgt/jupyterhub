@@ -405,7 +405,7 @@
                                 },
                                 "volumeMounts": [
                                     {
-                                        "mountPath": "/var/lib/pgsql/data",
+                                        "mountPath": "/var/lib/pgsql/data:z",
                                         "name": "data"
                                     }
                                 ]
@@ -437,7 +437,7 @@
                             ],
                             "from": {
                                 "kind": "ImageStreamTag",
-                                "name": "postgresql:latest",
+                                "name": "postgresql96:latest",
                                 "namespace": "jupyterhub"
                             }
                         },
