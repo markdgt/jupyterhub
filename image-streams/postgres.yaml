@@ -1,0 +1,36 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: postgresql96
+  namespace: default
+  selfLink: /apis/image.openshift.io/v1/namespaces/default/imagestreams/postgresql-96
+  uid: e6243e92-5cb1-45da-ad76-0b16f5cc4e43
+  resourceVersion: '4663079'
+  generation: 1
+  creationTimestamp: '2020-05-29T22:43:34Z'
+  annotations:
+    openshift.io/image.dockerRepositoryCheck: '2020-05-29T22:43:34Z'
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+    - name: latest
+      annotations: null
+      from:
+        kind: DockerImage
+        name: docker.io/postgres
+      generation: 1
+      importPolicy: {}
+      referencePolicy:
+        type: Source
+status:
+  dockerImageRepository: 'image-registry.openshift-image-registry.svc:5000/default/postgresql-96'
+  tags:
+    - tag: latest
+      items:
+        - created: '2020-05-29T22:43:34Z'
+          dockerImageReference: >-
+            docker.io/postgres@sha256:38eb50ceaf0bfe82a9c768e5537a012b58bb4fff0b0e4242e79dea992520c30f
+          image: >-
+            sha256:38eb50ceaf0bfe82a9c768e5537a012b58bb4fff0b0e4242e79dea992520c30f
+          generation: 1
