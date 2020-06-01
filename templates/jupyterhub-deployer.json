@@ -365,11 +365,11 @@
                                 "name": "postgresql",
                                 "env": [
                                     {
-                                        "name": "POSTGRESQL_USER",
+                                        "name": "POSTGRES_USER",
                                         "value": "jupyterhub"
                                     },
                                     {
-                                        "name": "POSTGRESQL_PASSWORD",
+                                        "name": "POSTGRES_PASSWORD",
                                         "value": "${DATABASE_PASSWORD}"
                                     },
                                     {
