@@ -2,7 +2,7 @@ kubernetes
 jupyterhub
 jupyterhub-kubespawner
 oauthenticator
-jupyterhub-ldapauthenticator
+jupyterhub-ltiauthenticator
 psycopg2
 openshift
 wrapt

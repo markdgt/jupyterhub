@@ -18,7 +18,7 @@
         },
         {
             "name": "JUPYTERHUB_IMAGE",
-            "value": "jupyterhub:3.6.0",
+            "value": "jupyterhub:gt-prod",
             "required": true
         },
         {
@@ -236,6 +236,16 @@
                                     {
                                         "name": "JUPYTERHUB_COOKIE_SECRET",
                                         "value": "${COOKIE_SECRET}"
+                                    },
+                                    {
+                                        "name": "LTI_CLIENT_KEY",
+                                        "value": "74b82662d228654be5240508dd4fb993a0be33d46dc7089fe0fb02699ed56f51"
+                                    },
+                                    {
+                                        "name": "LTI_CLIENT_SECRET",
+                                        "secret":{
+                                             "secretName": "lti-secert"
+                                            }
                                     }
                                 ],
                                 "volumeMounts": [
