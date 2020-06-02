@@ -65,6 +65,12 @@
             "description": "Amount of memory available to each notebook.",
             "value": "512Mi",
             "required": true
+        },
+        {
+            "name": "LTI_CLIENT_SECRET",
+            "generate": "expression",
+            "from": "[a-f0-9]{32}",
+            "required": true
         }
     ],
     "objects": [
@@ -95,7 +101,12 @@
                     "serviceaccounts.openshift.io/oauth-redirecturi.first": "hub/oauth_callback",
                     "serviceaccounts.openshift.io/oauth-want-challenges": "false"
                 }
-            }
+            },
+            "secrets": [
+                {
+                   "name": "lti-secret"
+                }
+             ]
         },
         {
             "kind": "RoleBinding",
@@ -243,10 +254,9 @@
                                     },
                                     {
                                         "name": "LTI_CLIENT_SECRET",
-                                        "secret":{
-                                             "secretName": "lti-secert"
-                                            }
+                                        "value": "${LTI_CLIENT_SECRET}"
                                     }
+                                    
                                 ],
                                 "volumeMounts": [
                                     {
@@ -321,26 +331,6 @@
                 "tls": {
                     "termination": "edge",
                     "insecureEdgeTerminationPolicy": "Redirect"
-                }
-            }
-        },
-        {
-            "kind": "PersistentVolumeClaim",
-            "apiVersion": "v1",
-            "metadata": {
-                "name": "${APPLICATION_NAME}-db",
-                "labels": {
-                    "app": "${APPLICATION_NAME}"
-                }
-            },
-            "spec": {
-                "accessModes": [
-                    "ReadWriteOnce"
-                ],
-                "resources": {
-                    "requests": {
-                        "storage": "1Gi"
-                    }
                 }
             }
         },

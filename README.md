@@ -479,3 +479,26 @@ oc delete oauthclient --selector app=jupyterhub
 ```
 
 If there is more than one resource matching the label selector, delete by name the one corresponding to the project you created the deployment in. The project name will be part of the resource name.
+
+
+PVC EXAMPLES:
+        {
+            "kind": "PersistentVolumeClaim",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "${APPLICATION_NAME}-db",
+                "labels": {
+                    "app": "${APPLICATION_NAME}"
+                }
+            },
+            "spec": {
+                "accessModes": [
+                    "ReadWriteOnce"
+                ],
+                "resources": {
+                    "requests": {
+                        "storage": "1Gi"
+                    }
+                }
+            }
+        },
