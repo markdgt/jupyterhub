@@ -6,6 +6,7 @@ LABEL io.k8s.display-name="JupyterHub" \
       io.openshift.s2i.scripts-url="image:///opt/app-root/builder"
 
 USER root
+#Test
 RUN yum update -y
 COPY . /tmp/src
 
