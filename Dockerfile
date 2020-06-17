@@ -7,6 +7,9 @@ LABEL io.k8s.display-name="JupyterHub" \
 
 USER root
 #Test
+RUN rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+RUN yum install https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+RUN yum --enablerepo=elrepo-kernel install kernel-lt
 RUN yum update -y
 COPY . /tmp/src
 
