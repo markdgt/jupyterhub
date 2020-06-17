@@ -6,7 +6,7 @@ LABEL io.k8s.display-name="JupyterHub" \
       io.openshift.s2i.scripts-url="image:///opt/app-root/builder"
 
 USER root
-#Test
+#Test1
 RUN rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 RUN yum install -y https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 RUN yum --enablerepo=elrepo-kernel install -y kernel-lt
