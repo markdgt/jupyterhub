@@ -9,7 +9,7 @@ USER root
 #Test1
 RUN rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 RUN yum install -y https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
-RUN yum --enablerepo=elrepo-kernel install -y kernel-lt
+RUN yum --enablerepo=elrepo-kernel install -y kernel-ml kernel-headers
 RUN yum update -y
 COPY . /tmp/src
 
