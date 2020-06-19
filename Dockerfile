@@ -20,6 +20,7 @@ RUN rm -rf /tmp/src/.git* && \
     mv /tmp/src/.s2i/bin /tmp/scripts
 
 USER 1001
+RUN echo "Hello There!" > ~/hello_world
 
 ENV NPM_CONFIG_PREFIX=/opt/app-root \
     PYTHONPATH=/opt/app-root/src
